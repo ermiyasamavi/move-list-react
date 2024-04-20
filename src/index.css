@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed" !important;
+}
+
+.border-bon:hover {
+  border-bottom: 1px solid #ffffff;
+  transition: all 0.5s ease-in;
+}
+input {
+  outline: none;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  animation: text-color 1.5s ease-in-out infinite;
+}
+.spinner-sector {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  mix-blend-mode: overlay;
+  animation: rotate var(--duration) var(--timeing) infinite;
+}
+.spinner-sector-red {
+  border-top-color: rgb(118, 250, 24);
+  --duration: 1.5s;
+  --timeing: ease-in-out;
+}
+
+.spinner-sector-blue {
+  border-left-color: lightblue;
+  --duration: 2s;
+  --timeing: ease-in;
+}
+.spinner-sector-green {
+  border-right-color: lightgreen;
+  --duration: 2.5s;
+  --timeing: ease-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes text-color {
+  0%,
+  100% {
+    color: rgba(255, 255, 255, 1);
+  }
+  25%,
+  75% {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
